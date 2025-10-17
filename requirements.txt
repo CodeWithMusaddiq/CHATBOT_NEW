@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+pdfplumber
+python-dotenv
+supabase
+numpy
+sentence-transformers
+openai
+python-multipart

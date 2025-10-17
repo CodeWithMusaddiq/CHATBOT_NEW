@@ -1,0 +1,37 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f2f4f8;
+  text-align: center;
+  padding: 30px;
+}
+
+.container {
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  width: 400px;
+  margin: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.upload-box, .chat-box {
+  margin: 20px 0;
+}
+
+button {
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #357abd;
+}
+
+#response {
+  margin-top: 20px;
+  font-weight: bold;
+}
