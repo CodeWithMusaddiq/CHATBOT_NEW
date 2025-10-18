@@ -1,27 +1,26 @@
 # app/core/database.py
-
 from supabase import create_client, Client
-import os
 from dotenv import load_dotenv
+import os
 
-# Load environment variables from .env file
+# Load environment variables
 load_dotenv()
 
-# Get Supabase credentials
 SUPABASE_URL = os.getenv("SUPABASE_URL")
 SUPABASE_KEY = os.getenv("SUPABASE_KEY")
 
-# Initialize Supabase client
+# Create Supabase client
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
-# --- Helper functions ---
+def test_connection():
+    try:
+        print("🔍 Testing Supabase connection...")
+        # Attempt to fetch data from Sidra's 'documents' table
+        response = supabase.table("documents").select("*").limit(2).execute()
+        print("✅ Connection successful! Here’s sample data:")
+        print(response.data)
+    except Exception as e:
+        print("❌ Failed to connect to Supabase:", e)
 
-def insert_data(table_name: str, content: dict):
-    """Insert data into a given Supabase table."""
-    response = supabase.table(table_name).insert(content).execute()
-    return response
-
-def fetch_data(table_name: str):
-    """Fetch all data from a given Supabase table."""
-    response = supabase.table(table_name).select("*").execute()
-    return response.data
+if __name__ == "__main__":
+    test_connection()

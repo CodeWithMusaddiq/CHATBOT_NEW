@@ -1,7 +1,8 @@
 # app/main.py
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.routers.chat_router import router as chat_router  # ✅ Add this line
+from app.routers.chat_router import router as chat_router
+from app.routers.upload_router import router as upload_router
 
 app = FastAPI(
     title="PDF Chatbot",
@@ -9,19 +10,19 @@ app = FastAPI(
     version="1.0"
 )
 
-# --- CORS setup (lets frontend talk to backend) ---
+# Enable frontend access
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # allow all for now (we can restrict later)
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# --- Routes ---
 @app.get("/")
 def home():
     return {"message": "Welcome to PDF Chatbot API!"}
 
-# ✅ Include the chat router
+# Routers
 app.include_router(chat_router)
+app.include_router(upload_router)
