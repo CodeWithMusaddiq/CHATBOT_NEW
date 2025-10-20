@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -8,19 +8,60 @@
 </head>
 <body>
   <div class="container">
-    <h1>📄 PDF Chatbot</h1>
+    <h1>📚 PDF Chatbot</h1>
 
     <div class="upload-box">
       <input type="file" id="pdfFile" accept=".pdf">
       <button id="uploadBtn">Upload PDF</button>
+      <p id="uploadStatus"></p>
     </div>
 
     <div class="chat-box">
-      <input type="text" id="question" placeholder="Ask a question..." />
+      <input type="text" id="question" placeholder="Ask a question...">
       <button id="askBtn">Ask</button>
+      <div id="response"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PDF Chatbot - AI Assistant</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>📚 PDF Chatbot</h1>
+    <p class="subtitle">Upload PDFs and ask questions across all documents</p>
+
+    <!-- Upload Section -->
+    <div class="upload-box">
+      <h3>📤 Upload PDF Document</h3>
+      <input type="file" id="pdfFile" accept=".pdf">
+      <button id="uploadBtn">Upload PDF</button>
+      <p id="uploadStatus" class="status-message"></p>
     </div>
 
-    <div id="response"></div>
+    <!-- Chat Section -->
+    <div class="chat-box">
+      <h3>💬 Ask Questions</h3>
+      <input type="text" id="question" placeholder="Ask a question about your PDFs...">
+      <button id="askBtn">Ask Question</button>
+      <div id="response" class="response-box"></div>
+    </div>
+
+    <!-- Document List Section -->
+    <div class="documents-box">
+      <h3>📂 Uploaded Documents</h3>
+      <button id="listDocsBtn">Refresh List</button>
+      <div id="documentsList"></div>
+    </div>
   </div>
 
   <script src="script.js"></script>

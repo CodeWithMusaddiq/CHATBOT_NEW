@@ -1,9 +1,24 @@
-fastapi
-uvicorn
-pdfplumber
-python-dotenv
-supabase
-numpy
-sentence-transformers
-openai
-python-multipart
+# fastapi
+# uvicorn
+# pdfplumber
+# python-dotenv
+# supabase
+# numpy
+# sentence-transformers
+# openai
+# python-multipart
+# Core FastAPI
+
+
+fastapi==0.115.0
+uvicorn[standard]==0.32.0
+python-multipart==0.0.12
+pydantic==2.9.2
+python-dotenv==1.0.1
+pdfplumber==0.11.4
+supabase==2.9.0
+torch==2.9.0
+sentence-transformers==3.2.1
+numpy==2.1.3
+groq==0.11.0
+httpx==0.27.2
